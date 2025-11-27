@@ -1,0 +1,11 @@
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - dashboard.local
+  paths:
+    - /
+  pathType: Prefix
+
+metricsScraper:
+  enabled: true
