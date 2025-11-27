@@ -9,6 +9,8 @@ spec:
     repoURL: 'https://github.com/iradics1974/gitops-lab.git'
     targetRevision: HEAD
     path: apps
+    directory:
+      recurse: true   # <── THIS IS THE KEY
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
