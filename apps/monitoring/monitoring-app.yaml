@@ -6,12 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://prometheus-community.github.io/helm-charts'
+    repoURL: https://prometheus-community.github.io/helm-charts
     chart: kube-prometheus-stack
     targetRevision: 65.2.0
     helm:
       releaseName: monitoring
-      valueFiles: []
       values: |
         grafana:
           adminPassword: "admin"
@@ -20,19 +19,15 @@ spec:
             ingressClassName: nginx
             hosts:
               - grafana.local
-            paths:
-              - /
-            pathType: Prefix
 
         prometheus:
+          prometheusSpec:
+            retention: 7d
           ingress:
             enabled: true
             ingressClassName: nginx
             hosts:
               - prometheus.local
-            paths:
-              - /
-            pathType: Prefix
 
         alertmanager:
           ingress:
@@ -40,12 +35,9 @@ spec:
             ingressClassName: nginx
             hosts:
               - alertmanager.local
-            paths:
-              - /
-            pathType: Prefix
 
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
     namespace: monitoring
   syncPolicy:
     automated:
