@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: python-api
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: 'https://github.com/iradics1974/python-api.git'
+    targetRevision: main
+    path: k8s  # This is the folder inside the python-api repo
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true        # Remove old resources no longer in Git
+      selfHeal: true     # Fix drift automatically
+    syncOptions:
+      - CreateNamespace=true
