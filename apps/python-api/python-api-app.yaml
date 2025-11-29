@@ -6,6 +6,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: python-api=docker.io/iradics1974/python-api
     argocd-image-updater.argoproj.io/python-api.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git
 spec:
   project: default
 
