@@ -11,7 +11,7 @@ spec:
   project: default
 
   source:
-    repoURL: 'https://github.com/iradics1974/python-api.git'
+    repoURL: 'https://github.com/iradics1974/python-api'
     targetRevision: main
     path: k8s  # This is the folder inside the python-api repo
 
