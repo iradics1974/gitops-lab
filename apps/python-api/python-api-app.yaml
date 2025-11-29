@@ -3,6 +3,9 @@ kind: Application
 metadata:
   name: python-api
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: python-api=docker.io/iradics1974/python-api
+    argocd-image-updater.argoproj.io/python-api.update-strategy: latest
 spec:
   project: default
 
