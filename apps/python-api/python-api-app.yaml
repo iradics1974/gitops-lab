@@ -12,9 +12,9 @@ spec:
   project: default
 
   source:
-    repoURL: 'https://github.com/iradics1974/python-api'
+    repoURL: https://github.com/iradics1974/gitops-lab
     targetRevision: main
-    path: k8s  # This is the folder inside the python-api repo
+    path: apps/python-api/manifests  # This is the folder inside the python-api repo
 
   destination:
     server: https://kubernetes.default.svc
