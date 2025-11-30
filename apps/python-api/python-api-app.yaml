@@ -14,7 +14,7 @@ spec:
   source:
     repoURL: https://github.com/iradics1974/gitops-lab
     targetRevision: main
-    path: apps/python-api/manifests  # This is the folder inside the python-api repo
+    path: apps/python-api/manifests  # This is the folder inside the gitops-lab repo
 
   destination:
     server: https://kubernetes.default.svc
