@@ -3,4 +3,4 @@ resources:
 - service.yaml
 images:
 - name: docker.io/iradics1974/python-api
-  newTag: 33fff19
+  newTag: f404817
