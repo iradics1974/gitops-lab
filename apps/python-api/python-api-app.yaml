@@ -4,7 +4,6 @@ metadata:
   name: python-api
   namespace: argocd
   annotations:
-    # Image updater configuration
     argocd-image-updater.argoproj.io/image-list: python-api=docker.io/iradics1974/python-api
     argocd-image-updater.argoproj.io/python-api.update-strategy: latest
     argocd-image-updater.argoproj.io/write-back-method: git
@@ -15,8 +14,8 @@ spec:
   source:
     repoURL: https://github.com/iradics1974/gitops-lab
     targetRevision: main
-    path: apps/python-api/manifests
-    kustomize: {}    # Activate Kustomize for this folder
+    path: apps/python-api/overlays/dev   # <<< EZ A LÉNYEG
+    kustomize: {}                        # továbbra is Kustomize
 
   destination:
     server: https://kubernetes.default.svc
