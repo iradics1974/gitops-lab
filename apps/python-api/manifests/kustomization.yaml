@@ -1,7 +1,6 @@
 resources:
-  - deployment.yaml
-  - service.yaml
-
+- deployment.yaml
+- service.yaml
 images:
-  - name: docker.io/iradics1974/python-api
-    newTag: latest
+- name: docker.io/iradics1974/python-api
+  newTag: 33fff19
