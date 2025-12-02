@@ -1,4 +1,8 @@
 resources:
   - ../../base
 
-namespace: default
+namespace: prod
+
+patches:
+  - replica-patch.yaml
+  - image-tag-patch.yaml

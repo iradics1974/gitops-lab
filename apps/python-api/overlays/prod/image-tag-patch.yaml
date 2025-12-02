@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-api
+spec:
+  template:
+    spec:
+      containers:
+      - name: python-api
+        image: docker.io/iradics1974/python-api:prod-v1
