@@ -3,6 +3,6 @@ resources:
 
 namespace: prod
 
-patches:
-  - replica-patch.yaml
+patchesStrategicMerge:
   - image-tag-patch.yaml
+  - replica-patch.yaml
