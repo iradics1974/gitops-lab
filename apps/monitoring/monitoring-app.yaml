@@ -11,8 +11,9 @@ spec:
     targetRevision: 65.2.0
     helm:
       releaseName: monitoring
-      values: |
+      values:
         grafana:
+          enabled: true
           adminPassword: "admin"
           ingress:
             enabled: true
@@ -21,27 +22,16 @@ spec:
               - grafana.local
 
         prometheus:
-          prometheusSpec:
-            retention: 7d
-          ingress:
-            enabled: true
-            ingressClassName: nginx
-            hosts:
-              - prometheus.local
+          enabled: true
 
         alertmanager:
-          ingress:
-            enabled: true
-            ingressClassName: nginx
-            hosts:
-              - alertmanager.local
+          enabled: true
 
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
+
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
