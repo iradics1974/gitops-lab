@@ -1,8 +1,11 @@
 resources:
-- ../../base
+  - ../../base
+
 namespace: default
+
 images:
-- name: docker.io/iradics1974/python-api
-  newTag: latest
-patches:
-- path: name-patch.yaml
+  - name: docker.io/iradics1974/python-api
+    newTag: latest
+
+patchesStrategicMerge:
+  - name-patch.yaml
