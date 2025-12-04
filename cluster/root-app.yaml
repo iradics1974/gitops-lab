@@ -8,9 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/iradics1974/gitops-lab.git'
     targetRevision: HEAD
-    path: apps
-    directory:
-      recurse: true   # <── THIS IS THE KEY
+    path: cluster/apps      # <-- MOSTANTÓL INNEN TÖLTI A CHILD APP-OKAT
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
