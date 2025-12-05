@@ -11,7 +11,7 @@ spec:
     targetRevision: 65.2.0
     helm:
       releaseName: monitoring
-      values:
+      values: |
         grafana:
           enabled: true
           adminPassword: "admin"
