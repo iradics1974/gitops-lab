@@ -6,6 +6,3 @@ namespace: prod
 patchesStrategicMerge:
   - image-tag-patch.yaml
   - replica-patch.yaml
-
-patches:
-  - path: name-patch.yaml
