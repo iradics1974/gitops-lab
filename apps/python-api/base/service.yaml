@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: python-api
 spec:
-  type: NodePort                 # Expose on Minikube IP
+  type: NodePort
   selector:
-    app: python-api              # Must match pod labels
+    app: python-api
   ports:
-    - port: 80                   # Service port
-      targetPort: 5000           # Flask internal port
-      # nodePort: 30080            # External Minikube port
-
+    - name: http
+      port: 80
+      targetPort: 80

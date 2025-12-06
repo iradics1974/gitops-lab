@@ -6,3 +6,4 @@ namespace: prod
 patchesStrategicMerge:
   - image-tag-patch.yaml
   - replica-patch.yaml
+  - service-patch.yaml     # ← HOZZÁADVA
